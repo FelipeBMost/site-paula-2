@@ -1,0 +1,119 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+body {
+  background-image:url(./images/fundoHome.svg);
+  background-repeat: repeat;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+}
+main {
+  height: 100%
+}
+ul, li, ol, a {
+  list-style: none;
+  text-decoration: none;
+}
+header {
+  height: 120px;
+  width: 360px;
+}
+h1, h4 {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+h3 {
+  font-size: 2rem;
+  color: #367630;
+  background-color: rgb(255, 253, 253);
+  padding: 5px 15px;
+  border: 1px solid #367630;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 0 15px #36763063;
+}
+header img {
+  width: 200px;
+}
+nav ul {
+  width: 120px;
+}
+ul img {
+  width: 50px;
+  height: 50px;
+}
+section {
+  padding-top: 20px;
+}
+footer {
+  background-color: #367630;
+  width: 370px;
+  height: 80px;
+}
+.flex {
+  display: flex;
+}
+.col {
+flex-direction: column;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.sa {
+  justify-content: space-around;
+}
+.sb {
+  justify-content: space-between;
+}
+.se {
+  justify-content: space-evenly;
+}
+#recipe-div, #amigurumi-div {
+  position: relative;
+  width: 360px;
+  padding-top: 20px;
+}
+#recipe-image, #amigurumi-image {
+  border: 12px solid #9EE59D;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.267);
+}
+#recipe-description, #amigurumi-description {
+  height: 150px;
+  width: 300px;
+  background-color: #9EE59D;
+  text-align: justify;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.more-content-button {
+  width: 120px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 18px;
+  background-color: #367630;
+  color: #fff;
+  font-size: 1.15rem;
+}
+.cart-actions {
+  width: 36 0px;
+}
+.cart-actions button {
+  width: 120px;
+  height: 40px;
+}
+.arrow-right, .arrow-left {
+  width: 45px;
+  height: 50px;
+}
