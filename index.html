@@ -8,73 +8,91 @@
   <script src="./main.js" defer></script>
   <title>Ana Paula Salerno Crochet Design</title>
 </head>
-<body class="flex col center sb">
-  <header class="flex center se">
+<body class="flex col">
+  <header class="flex sb">
     <img src="./images/logo.png" alt="">
-    <nav class="flex center">
-      <ul class="flex center sb">
-        <li><img src="./images/whatsapp.svg" alt=""></li>
-        <li><img src="./images/instagram.svg" alt=""></li>
+    <nav class="flex sb">
+      <ul class="flex sa">
+        <li><img src="./images/whatsapp.svg" alt="Logo do whatsapp com link para enviar mensagem para Ana Salerno"></li>
+        <li><img src="./images/instagram.svg" alt="Logo do instagram com link para o direct de Ana Salerno"></li>
       </ul>
     </nav>
   </header>
 
-  <main class="flex col center se">
+  <main class="flex col se">
     <h1>Ana Salerno Crochet Design</h1>
-    <section class="flex col center">
-      <div id="recipe-div" class="flex col center">
-        <h3>URSO KUMA</h3>
-        <div class="flex center sb">
-          <button class="arrow-left"><</button>
-          <img id="recipe-image" src="./images/ursoKuma.svg" alt="">
-          <button class="arrow-right">></button>
-        </div>
+    <section class="flex col se">
+      <h2 class="flex">Receitas</h2>
+      <div id="recipe-div" class="flex col">
+        <h3 data-recipeTitle></h3>
+        <img data-recipeImage id="recipe-image" alt="">
       </div>
-      <div id="recipe-description" class="flex col center se">
+      <div id="recipe-description" class="flex col se">
         <h4>Descrição</h4>
-        <ul>
-          <li><p>Qt. de linha: 10m</p></li>
-          <li><p>Altura: 25cm</p></li>
-          <li><p>Valor: R$ 25,00</p></li>
+        <ul data-recipeDescription>
+          <li><p data-recipeDescriptionItem="1"></p></li>
+          <li><p data-recipeDescriptionItem="2"></p></li>
+          <li><p data-recipeDescriptionItem="3"></p></li>
         </ul>
-        <button class="more-content-button flex center">Materiais</button>
+        <button class="more-content-button flex">Materiais</button>
       </div>
-      <div class="cart-actions flex center sa">
-        <button class="flex center">Adicionar ao Carrinho</button>
-        <button class="flex center">Ver Carrinho</button>
-      </div>
-    </section>
-
-    <section class="flex col center">
-      <div id="amigurumi-div" class="flex col center">
-        <h3>URSO KUMA</h3>
-        <div id="amigurumi-image" class="flex center sb">
-          <img src="./images/ursoKuma.svg" alt="">
-          <button class="arrow-left"></button>
-          <button class="arrow-right"></button>
-        </div>
-      </div>
-      <div id="amigurumi-description" class="flex col center se">
-        <h4>Descrição</h4>
-        <ul>
-          <li><p>aa</p></li>
-          <li><p>a</p></li>
-          <li><p>a</p></li>
-        </ul>
-        <button class="more-content-button flex center" ></button>
-      </div>
-      <div class="cart-actions flex center sa">
-        <button class="flex center">Adicionar ao Carrinho</button>
-        <button class="flex center">Ver Carrinho</button>
+      <div class="cart-actions flex se">
+        <button data-recipeButtonLeft class="arrow-left"><</button>
+        <button id="add-to-cart" class="flex">Adicionar ao Carrinho</button>
+        <button id="open-cart" class="flex col">Ver Carrinho
+          <span data-cartCounter></span></button>
+        <button data-recipeButtonRight class="arrow-right">></button>
       </div>
     </section>
 
     <dialog id="cart">
-
+      <section id="cart-container flex col sb">
+        <ul data-itemList id="item-list">
+          <li class="cart-item flex se">
+            <img src="./images/ursoKuma.png" alt="" width="70px" height="70px">
+            <p>Urso Kuma</p>
+            <button data-removeButton class="remove-item">Remover</button>
+          </li>
+          <li class="cart-item flex se">
+            <img src="./images/ursoKuma.png" alt="" width="70px" height="70px">
+            <p>Urso Kuma</p>
+            <button data-removeButton class="remove-item">Remover</button>
+          </li>
+        </ul>
+        <div id="cart-button-container" class="flex center">
+          <button id="close-cart" class="cart-buttons">Voltar</button>
+          <button id="check-out" class="cart-buttons">Fazer pagamento</button>
+        </div>
+      </section>
     </dialog>
+
+    <section class="flex col">
+      <h2 class="flex">Amigurumis</h2>
+      <div id="amigurumi-div" class="flex col">
+        <h3>URSO KUMA</h3>
+        <div class="flex sb">
+          <img id="amigurumi-image" src="./images/ursoKuma.png" alt="">
+        </div>
+      </div>
+      <div id="amigurumi-description" class="flex col se">
+        <h4>Descrição</h4>
+        <ul>
+          <li><p>Altura padrão: </p></li>
+          <li><p>Cores:</p></li>
+          <li><p>Valor:</p></li>
+        </ul>
+        <!-- <button class="more-content-button flex"></button> -->
+      </div>
+      <div class="cart-actions flex sa">
+        <button class="arrow-left"><</button>
+        <button id="order" class="flex">Encomendar</button>
+        <button class="arrow-right">></button>
+      </div>
+    </section>
 
   </main>
 
-  <footer></footer>
+  <footer class="flex">
+  </footer>
 </body>
 </html>
