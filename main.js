@@ -8,13 +8,14 @@ const recipeButtonRight = document.querySelector("[data-recipeButtonRight]");
 const recipeButtonLeft = document.querySelector("[data-recipeButtonLeft]");
 const cartNumberOfItens = document.querySelector("[data-cartCounter]");
 const cart = document.querySelector("#cart");
+const itemList = cart.querySelector("[data-itemList]");
 const openCart = document.querySelector("#open-cart");
-const addToCart = document.querySelector("#add-to-cart");
+const addToCartButton = document.querySelector("#add-to-cart");
 const closeCart = cart.querySelector("#close-cart");
 const removeItemButtom = cart.querySelectorAll("[data-removeButton]");
 
 const recipes = [{
-  title: 'URSO KUMA',
+  title: 'Urso Kuma',
   imagePath: './images/ursoKuma.png',
   description: {
     qt: '10m',
@@ -26,7 +27,7 @@ const recipes = [{
   buttonColor: '#367630',
   titleShadow: '#26c91863'
 }, {
-  title: 'URSA VÊNUS',
+  title: 'Ursa Vênus',
   imagePath: './images/ursaVenus.png',
   description: {
     qt: '12m',
@@ -57,6 +58,9 @@ cart.addEventListener("click", (e) => {
     target.parentElement.remove();
   }
 })
+addToCartButton.addEventListener("click", () => {
+  addToCartFunction(recipeCounter);
+})
 recipeButtonRight.addEventListener("click", () => {
   if (recipeCounter === recipes.length - 1) return
   if (recipeCounter === 0)
@@ -77,7 +81,7 @@ recipeButtonLeft.addEventListener("click", () => {
   generateRecipe(recipeCounter)
 })
 let generateRecipe = (counter) => {
-  recipeTitle.textContent = recipes[counter].title;
+  recipeTitle.textContent = recipes[counter].title.toUpperCase();
   recipeImage.setAttribute("src", recipes[counter].imagePath);
   recipeDescriptionItem1.textContent = `Qt. de linha: ${recipes[counter].description.qt}`;
   recipeDescriptionItem2.textContent = `Altura: ${recipes[counter].description.height}`;
@@ -87,9 +91,35 @@ let generateRecipe = (counter) => {
   document.documentElement.style.setProperty('--recipe-button-color', recipes[counter].buttonColor);
   document.documentElement.style.setProperty('--recipe-shadow', recipes[counter].buttonColor);
 }
-
 let cartItemsCount = (counter) => {
   cartNumberOfItens.textContent = counter !== 1 ? `${counter} items` : `${counter} item`;
 }
+let addToCartFunction = (counter) => {
+  const listItem = document.createElement("li");
+  listItem.classList.add('cart-item', 'flex', 'se');
+  const itemImage = document.createElement("img");
+  itemImage.setAttribute('src', recipes[counter].imagePath);
+  itemImage.setAttribute('alt', '');
+  itemImage.classList.add('item-image');
+  const itemName = document.createElement('p');
+  itemName.textContent = recipes[counter].title;
+  const itemButton = document.createElement('button');
+  itemButton.textContent = 'remover';
+  itemButton.setAttribute('data-removeButton', '');
+  itemButton.classList.add('remove-item');
+  listItem.appendChild(itemImage);
+  listItem.appendChild(itemName);
+  listItem.appendChild(itemButton);
+  itemList.appendChild(listItem);
+  cartItemsCount(cartCounter.length);
+}
+let preloadImages = () => {
+  for (let i = 1; i < recipes.length; i++) {
+    newImage = document.createElement('img');
+    newImage.setAttribute('src', recipes[i].imagePath);
+    console.log(newImage)
+  }
+}
 generateRecipe(recipeCounter);
 cartItemsCount(cartCounter.length);
+preloadImages();

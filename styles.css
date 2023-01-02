@@ -27,10 +27,15 @@ ul, li, ol, a {
 header {
   height: 100px;
   width: 100%;
+  max-width: 600px;
 }
 main {
   background-image:url(./images/fundoHome.svg);
   background-repeat: repeat;
+  width: 100%;
+}
+main > section {
+  width: 100%;
 }
 h1, h4 {
   position: absolute;
@@ -67,9 +72,6 @@ h2 {
 }
 p {
   font-size: 1.2rem;
-}
-header {
-  width: 370px;
 }
 header > img {
   width: 180px;
@@ -120,6 +122,8 @@ footer {
 #recipe-image {
   border: 12px solid var(--recipe-color);
   border-radius: 20px 20px 0 0;
+  width: 280px;
+  height: 280px;
 }
 #recipe-description, #amigurumi-description {
   margin-top: -1px;
@@ -211,6 +215,10 @@ footer {
 .cart-item {
   border-bottom: 3px solid #002e69;
   margin-bottom: 10px
+}
+.item-image {
+  width: 70px;
+  height: 70px;
 }
 .cart-buttons {
   width: 150px;
